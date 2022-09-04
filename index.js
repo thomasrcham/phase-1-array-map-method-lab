@@ -11,6 +11,26 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
+let newArray =[]
+
+const titleCased = (() => {
+  debugger;
+  for (const item of tutorials) {
+    const str = item.split (' ')
+    let capArray = str.map( (string) => {
+      return string [0].toUpperCase() + string.slice(1);})
+    let joinArray = capArray.join(" ")
+    newArray.push(joinArray)
+    }
+    tutorials.splice(0,10)
+    tutorials.push(...newArray)
   return tutorials
+})
+
+function capitalize(string) {
+  return string [0].toUpperCase() + string.slice(1);
 }
+
+
+titleCased();
+console.log(tutorials)
